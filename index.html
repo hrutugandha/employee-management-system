@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- - name
+- email
+- username
+- mobile
+- description -->
+<body>
+    <div id="info">
+        <div id="name"></div>
+        <div id="email"></div>
+        <div id="username"></div>
+        <div id="mobile"></div>
+        <div id="description"></div>
+    </div>
+</body>
+</html>
+<script>
+    let token = localStorage.getItem('token');
+    let username = localStorage.getItem('username');
+    let getUser = async (username, token) => {
+    try {
+      let res = await fetch(
+        `https://masai-api-mocker.herokuapp.com/api/user/${username}`);
+      let data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+}
+
+function appendData(data){
+
+  let container = document.getElementById('info');
+
+ }
+
+</script>
